@@ -17,6 +17,9 @@ public class LandingPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@text='LogTextBox']")
     private WebElement logTextBox;
 
+    @AndroidFindBy(xpath = "//*[@text='Change Log']")
+    private WebElement changeLog;
+
     @AndroidFindBy(xpath = "//*[@text='App']")
     private WebElement app;
 
@@ -38,14 +41,14 @@ public class LandingPage extends BasePage {
     @AndroidFindBy(xpath = "//*[contains(@text, 'This is a test')]")
     private WebElement thisIsATest;
 
-    @AndroidFindBy(xpath = "//*[@text='This is a switch']")
-    private WebElement thisIsASwitch;
-
     @AndroidFindBy(id="com.touchboarder.android.api.demos:id/add")
     private WebElement addButton;
 
     @AndroidFindBy(id="com.touchboarder.android.api.demos:id/long_notify")
     private WebElement longNotifyButton;
+
+    @AndroidFindBy(id = "com.touchboarder.android.api.demos:id/buttonDefaultPositive")
+    private WebElement okButtonChangeLog;
 
 
     public WebElement getApiDemos() {
@@ -88,10 +91,6 @@ public class LandingPage extends BasePage {
         return waitForElement(thisIsATest);
     }
 
-    public WebElement getThisIsASwitch() {
-        return waitForElement(thisIsASwitch);
-    }
-
     public WebElement getAddButton() {
         return waitForElement(addButton);
     }
@@ -100,7 +99,14 @@ public class LandingPage extends BasePage {
         return waitForElement(longNotifyButton);
     }
 
+    public WebElement getOkButtonChangeLog() {
+        return waitForElement(okButtonChangeLog);
+    }
+
     public void goToApiDemos() {
+        if (isDisplayed(changeLog)) {
+            getOkButtonChangeLog().click();
+        }
         getApiDemos().click();
     }
 
