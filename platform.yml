@@ -1,0 +1,8 @@
+android:
+    platformName: Android
+    platformVersion: 9
+    deviceName: simulator
+    automationName: UiAutomator2
+    app: /Users/chandan/development/apps/ApkDemo.apk
+    noReset: true
+    fullReset: false
