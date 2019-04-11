@@ -1,3 +1,3 @@
 ## Steps to execute test
 
-Update the location of app in platform.yml file
+Update the automation test properties platform.yml file
