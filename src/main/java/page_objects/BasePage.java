@@ -48,6 +48,10 @@ public class BasePage {
         }
         return displayed;
     }
+    
+    protected boolean isDisplayed(WebElement... element) {
+        return elementDisplayed(element);
+    }
 
     protected boolean isPageLoaded(WebElement... element) {
         return isDisplayed(element);
